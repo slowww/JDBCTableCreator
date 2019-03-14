@@ -1,0 +1,26 @@
+<html>
+<head>
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+    var numCampi = prompt("Quanti campi ha la tua tabella?");
+    if (numCampi != null) {
+    for(var i=0;i<numCampi;i++) {
+        document.getElementById("myForm").innerHTML+="<label>Nome campo: </label><input type='text' name='campo" + i + "' required'>";
+        document.getElementById("myForm").innerHTML+="<label>Tipo campo: </label>";
+        document.getElementById("myForm").innerHTML+="<select name='tipocampo"+ i +"'><option value='Testo breve'>Testo breve</option><option value='Numerico'>Numerico</option><option value='Datetime'>Datetime</option></select><br><br>";
+    }
+    }
+    document.getElementById("numCampi").value = numCampi;
+    document.getElementById("myForm").innerHTML+="<input type='submit' value='CREA!!!'>";
+    });
+</script>
+</head>
+<body>
+    <h1>CREA LA TUA TABELLA:</h1>
+    <form id="myForm" action="action.jsp" method="POST">
+<br>
+        <label>Nome tabella: </label><input type="text" name="nometab"><br><br>
+        <input type="hidden" name="numCampi" id="numCampi">
+    </form>
+</body>
+</html>
